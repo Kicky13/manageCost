@@ -20,8 +20,10 @@ class Car extends Model
         'car_cc',
         'fuel_type',
         'car_year',
+        'reg_plate',
         'car_image',
         'max_passenger',
+        'luggage_capacity',
         'travel_id'
     ];
 

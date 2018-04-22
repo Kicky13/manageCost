@@ -16,7 +16,7 @@ class CarController extends Controller
 
     public function cars($id)
     {
-        $travel = Travel::find($id)->first();
+        $travel = Travel::find($id);
         return view('travel.car.index', compact('travel'));
     }
 
@@ -48,8 +48,10 @@ class CarController extends Controller
             'cc' => 'required|min:2',
             'fuel' => 'required',
             'year' => 'required|min:4|max:4',
+            'plate' => 'required|min:4',
             'image' => 'required|image|dimensions:width=340,height=207',
-            'max' => 'required|min:2'
+            'max' => 'required',
+            'luggage' => 'required'
         ]);
         Car::create([
             'car_name' => $request->name,
@@ -58,8 +60,10 @@ class CarController extends Controller
             'car_cc' => $request->cc,
             'fuel_type' => $request->fuel,
             'car_year' => $request->year,
+            'reg_plate' => $request->plate,
             'car_image' => Storage::disk('travel')->put('car', $request->file('image')),
             'max_passenger' => $request->max,
+            'luggage_capacity' => $request->luggage,
             'travel_id' => $request->id,
         ]);
         return redirect('/car/'.$request->id);

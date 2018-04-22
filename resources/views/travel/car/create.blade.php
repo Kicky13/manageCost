@@ -87,10 +87,22 @@
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">Year</label>
                                 <div class="col-sm-10">
-                                    <input type="text" id="cc" name="year"
+                                    <input type="text" id="year" name="year"
                                            class="form-control {{ ($errors->has('year')) ? "error" : "" }}"
                                            placeholder="Write a Car Year">
                                     <span class="help-block">{{ ($errors->has('year')) ? $errors->first('year') : "" }}</span>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Register Plate</label>
+                                <div class="col-sm-10">
+                                    <input type="text" id="plate" name="plate"
+                                           class="form-control {{ ($errors->has('plate')) ? "error" : "" }}"
+                                           placeholder="Write a Car Registered Plate">
+                                    <span class="help-block">{{ ($errors->has('plate')) ? $errors->first('plate') : "" }}</span>
                                 </div>
                             </div>
                         </fieldset>
@@ -103,6 +115,18 @@
                                            class="form-control {{ ($errors->has('max')) ? "error" : "" }}"
                                            placeholder="Write a Maximum Passenger">
                                     <span class="help-block">{{ ($errors->has('max')) ? $errors->first('max') : "" }}</span>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Luggage Capacity</label>
+                                <div class="col-sm-10">
+                                    <input type="text" id="luggage" name="luggage"
+                                           class="form-control {{ ($errors->has('luggage')) ? "error" : "" }}"
+                                           placeholder="Write Luggage Capacity">
+                                    <span class="help-block">{{ ($errors->has('luggage')) ? $errors->first('luggage') : "" }}</span>
                                 </div>
                             </div>
                         </fieldset>

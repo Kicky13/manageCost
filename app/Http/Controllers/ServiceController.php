@@ -31,9 +31,20 @@ class ServiceController extends Controller
         $this->validate($request, [
             'origin' => 'required',
             'destination' => 'required',
-            'price' => 'required|numeric|min:1000'
+            'facility' => 'required',
+            'base_price' => 'required|numeric|min:1000',
+            'additional_price' => 'required|numeric|min:1000'
         ]);
-        Rate::create($request->all());
+        $price = $request->base_price + $request->additional_price;
+        Rate::create([
+            'car_id' => $request->car_id,
+            'origin' => $request->origin,
+            'destination' => $request->destination,
+            'facility' => $request->facility,
+            'base_price' => $request->base_price,
+            'additional_price' => $request->additional_price,
+            'price' => $price
+        ]);
         return redirect('/service/'.$request->car_id);
     }
 

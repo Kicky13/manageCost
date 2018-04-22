@@ -19,12 +19,12 @@ use Illuminate\Http\Request;
 
 Route::get('/travel', 'Api\TravelController@getData');
 
-Route::get('/perjalanan/indexData', 'Api\PerjalananController@index');
+Route::get('/city', 'Api\CityController@index');
+
 Route::get('/perjalanan/findService/{origin}/{destination}', 'Api\PerjalananController@search');
 Route::get('/perjalanan/detailService/{id}', 'Api\PerjalananController@detailService');
 Route::post('/perjalanan/create/{id}', 'Api\PerjalananController@create');
 
-Route::get('/rencana/indexData', 'Api\RencanaController@index');
-Route::get('/rencana/bepergian/{origin}/{destination}/{passenger}', 'Api\RencanaController@bepergian');
+Route::get('/rencana/bepergian/{origin}/{destination}/{passenger}/{facility}', 'Api\RencanaController@bepergian');
 Route::get('/rencana/detailService/{id}', 'Api\RencanaController@detailService');
-Route::post('/rencana/create', 'Api\RencanaController@create');
+Route::post('/rencana/create/{id}', 'Api\RencanaController@create');

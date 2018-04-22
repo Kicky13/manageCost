@@ -17,6 +17,9 @@ class Rate extends Model
         'car_id',
         'origin',
         'destination',
+        'facility',
+        'base_price',
+        'additional_price',
         'price',
     ];
 

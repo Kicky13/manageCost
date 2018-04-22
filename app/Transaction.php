@@ -9,6 +9,6 @@ class Transaction extends Model
     protected $table = 'transaction';
     public $timestamps = false;
     protected $fillable = [
-        'user_id', 'discount', 'subtotal', 'total', 'rate_id'
+        'user_id', 'departure_detail', 'discount', 'subtotal', 'total', 'rate_id'
     ];
 }
