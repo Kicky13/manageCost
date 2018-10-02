@@ -74,4 +74,8 @@ class CarController extends Controller
         Car::find($id)->delete();
         return back();
     }
+    
+    public function helloWorld() {
+        dd('Hello world!');
+    }
 }
